@@ -13,7 +13,7 @@ chrome.runtime.onConnect.addListener(function(port) {
     if (msg.newSliderValue){
       port.postMessage({response: "It worked"});
 
-      chrome.alarms.create({ periodInMinutes: (msg.newSliderValue / 60) });
+      chrome.alarms.create({ periodInMinutes: msg.newSliderValue});
       
     }else{
       port.postMessage({response: "msg.newSliderValue was false"});
