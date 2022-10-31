@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "Easy Study",
+    "version": "3.1",
+    "permissions": ["tabs", "alarms"],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts":[
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": ["MenuLogic/script.js", "MenuLogic/quiz.js"]
+        }
+    ],
+    "action": {
+        "default_icon": "Img/book.png",
+        "default_popup": "MenuLogic/popup.html",
+        "default_title": "Steady Study",
+        "icons": {"128": "128book.png"} 
+    }
+}
+
+
